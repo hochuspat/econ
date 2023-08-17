@@ -1,0 +1,35 @@
+
+
+.whiteText {
+  color: white;
+}
+.centeredContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.centeredContainer p {
+  text-align: left;
+}
+
+.personInfo {
+  display: flex;
+  align-items: flex-start; 
+  margin-bottom: 20px; 
+}
+
+.personText {
+  flex: 1; 
+  text-align: left; 
+}
+
+.facultyImage {
+  width: 251px;
+  height: auto;
+  margin-left: 20px; 
+  border-radius: 6%;
+}
