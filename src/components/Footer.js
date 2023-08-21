@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useMediaQuery } from 'react-responsive';
 
 const FooterContainer = styled.footer`
 background-color: white;
@@ -31,53 +30,16 @@ const FooterText = styled.p`
 `;
 
 const Footer = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
-  const isTablet = useMediaQuery({ query: '(max-width: 768px)' });
-  const isLaptop = useMediaQuery({ query: '(max-width: 1024px)' });
 
   return (
     <FooterContainer>
       <Logo src="/your-logo-image.svg" alt="Logo" />
       <InfoColumn>
-        <FooterText>© 2013-2023 ФГБОУ ВО «Кубанский государственный университет»</FooterText>
-        <FooterText>Учредитель - Министерство науки и высшего образования РФ</FooterText>
-        <FooterText>Министерство просвещения Российской Федерации</FooterText>
-        <FooterText>При использовании материалов ссылка на сайт обязательна</FooterText>
+        <FooterText>© 2013-2023 Экономический факультет</FooterText>            
+        <FooterText>Тел.: +7 (861) 219-95-54, 219-95-53</FooterText>
+            <FooterText>E-mail: decan@econ.kubsu.ru</FooterText>
       </InfoColumn>
-      <InfoColumn>
-        {isMobile && (
-          <>
-            <FooterText>Тел.: +7 (861) 219-95-30</FooterText>
-            <FooterText>E-mail: abitur@kubsu.ru</FooterText>
-          </>
-        )}
-        {isTablet && (
-          <>
-            <FooterText>Тел.: +7 (861) 219-95-30 - приемная комиссия</FooterText>
-            <FooterText>E-mail: abitur@kubsu.ru</FooterText>
-            <FooterText>Адрес: г. Краснодар, ул. Ставропольская, 149,</FooterText>
-          </>
-        )}
-        {isLaptop && (
-          <>
-            <FooterText>Тел.: +7 (861) 219-95-30 - приемная комиссия</FooterText>
-            <FooterText>E-mail: abitur@kubsu.ru</FooterText>
-            <FooterText>Адрес: 350040, г. Краснодар, ул. Ставропольская, 149,</FooterText>
-            <FooterText>Тел.: +7 (861) 219-95-02 - приемная ректора</FooterText>
-            <FooterText>E-mail: rector@kubsu.ru</FooterText>
-          </>
-        )}
-        {!isMobile && !isTablet && !isLaptop && (
-          <>
-            <FooterText>Политика конфиденциальности | Пользовательское соглашение</FooterText>
-            <FooterText>Тел.: +7 (861) 219-95-30 - приемная комиссия</FooterText>
-            <FooterText>E-mail: abitur@kubsu.ru</FooterText>
-            <FooterText>Адрес: 350040, г. Краснодар, ул. Ставропольская, 149,</FooterText>
-            <FooterText>Тел.: +7 (861) 219-95-02 - приемная ректора</FooterText>
-            <FooterText>E-mail: rector@kubsu.ru</FooterText>
-          </>
-        )}
-      </InfoColumn>
+
     </FooterContainer>
   );
 };

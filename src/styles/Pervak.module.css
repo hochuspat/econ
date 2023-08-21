@@ -3,22 +3,20 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #212940;
   font-family: 'TT Travels', sans-serif;
+  color: white;
 }
-.container2 {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+.flexContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse; 
+  justify-content: space-between;
   align-items: center;
-  background-color: #212940;
-  font-family: 'TT Travels', sans-serif;
 }
+
 .main {
   padding: 5rem 0;
   flex: 1;
@@ -26,6 +24,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+/* Pervak.module.css */
+.centeredHeading {
+  text-align: center;
+}
+/* Pervak.module.css */
+
+
+.programContainer {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.programTitle {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.programDescription {
+  display: none;
+  margin-top: 10px;
+}
+
+.open {
+  display: block;
 }
 
 
@@ -138,36 +163,29 @@
   color: white;
 }
 .facultyImage {
-  width:176px; 
+  width:343px; 
   height: auto;
   margin-right: 10px;
   border-radius: 6%;
 }
 .facultyImage2 {
-  max-width: 100%; 
+  width: 1740px;
   height: auto;
   margin-right: 10px;
   border-radius: 6%;
 }
-
-@media (max-width: 1740px) {
-  .facultyImage2 {
-    width: 100%; 
-    max-width: none; 
-  }
-}
-
 .facultyImage3{
   width: 697px;
   height: auto;
   margin-right: 10px;
   border-radius: 6%;
+  display: block;
+  margin: 0 auto;
 }
-
-@media (max-width: 768px) {
-  .facultyImage3 {
-    margin-right: 5px;
-  }
+/* Pervak.module.css */
+.centeredImage {
+  display: block;
+  margin: 0 auto;
 }
 
 .socialLink {

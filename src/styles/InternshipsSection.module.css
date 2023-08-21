@@ -1,0 +1,100 @@
+/* Импортируем переменные цветов */
+@import './fonts.css';
+
+/* Определяем стили для секции */
+.section {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #212940;
+    font-family: 'TT Travels', sans-serif;
+    color: white;}
+
+/* Определяем стили для заголовка секции */
+.heading {
+  /* Выравниваем текст по центру */
+  text-align: center;
+  /* Задаем цвет текста из переменной */
+  color: var(--primary-color);
+}
+
+/* Определяем стили для вводного текста секции */
+.intro {
+  /* Выравниваем текст по центру */
+  text-align: center;
+  /* Задаем цвет текста из переменной */
+  color: var(--secondary-color);
+}
+
+/* Определяем стили для сетки карточек */
+.grid {
+  /* Используем свойство display: grid для создания сетки */
+  display: grid;
+  /* Задаем количество колонок в сетке в зависимости от ширины экрана */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Задаем расстояние между карточками */
+  gap: 1rem;
+}
+
+/* Определяем стили для карточки */
+.card {
+    background-color: white;
+    color: black;
+  /* Добавляем тень для карточки */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+/* Определяем стили для изображения в карточке */
+.image {
+  /* Задаем ширину и высоту изображения */
+  width: 100%;
+  height: 200px;
+  /* Обрезаем изображение по краям карточки */
+  object-fit: cover;
+  border-radius: 6px;
+
+}
+
+/* Определяем стили для контента в карточке */
+.content {
+  /* Добавляем отступы внутри контента */
+  padding: 1rem;
+}
+
+/* Определяем стили для заголовка в карточке */
+.title {
+  /* Задаем цвет текста из переменной */
+  color: var(--primary-color);
+}
+
+/* Определяем стили для описания в карточке */
+.description {
+   /* Задаем цвет текста из переменной */
+   color: var(--secondary-color);
+}
+
+/* Определяем стили для кнопки в карточке */
+.button {
+   /* Делаем кнопку блочным элементом и задаем ей ширину и высоту */
+   display: block;
+   width: 100%;
+   height: 40px;
+   /* Убираем границу и фон у кнопки */
+   border: none;
+   background: none;
+   /* Задаем цвет текста из переменной и подчеркиваем его */
+   color: var(--primary-color);
+   text-decoration: underline;
+   /* Добавляем курсор в виде руки при наведении на кнопку */
+   cursor: pointer;
+}
+
+/* Изменяем стиль кнопки при наведении на нее */
+.button:hover {
+   /* Задаем цвет текста из переменной и делаем его полужирным */
+   color: var(--accent-color);
+   font-weight: bold;
+}

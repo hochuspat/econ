@@ -1,0 +1,83 @@
+/* ConferencesSection.module.css */
+
+/* Стили для раздела */
+.section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  /* Стили для подзаголовка */
+  .subtitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black; /* Черный цвет текста */
+  }
+  
+  /* Стили для текста */
+  .text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black; /* Черный цвет текста */
+  }
+  
+  /* Стили для изображений в карусели */
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Стили для подписи к изображению в карусели */
+  .caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Стили для заголовка и описания в карусели */
+  .caption h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .caption p {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* Стили для года */
+  .year {
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: black; /* Черный цвет текста */
+  }
+  
+  /* Стили для информации о победителе */
+  .winnerInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Стили для текста внутри информации о победителе */
+  .caption {
+    margin-left: 10px;
+  }
+
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Стили для изображения в контейнере */
+  .image {
+    width: 200px; /* Размер изображения */
+    height: 200px;
+    object-fit: cover; /* Масштабирование изображения */
+  }
+  

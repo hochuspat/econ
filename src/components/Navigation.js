@@ -6,14 +6,25 @@ import Link from 'next/link';
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [educationMenuOpen, setEducationMenuOpen] = useState(false);
+  const [abiturientMenuOpen, setAbiturientMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-  }
+  };
 
   const toggleEducationMenu = () => {
-    setEducationMenuOpen(!educationMenuOpen);
-  }
+    if (!educationMenuOpen) {
+      setEducationMenuOpen(true);
+      setAbiturientMenuOpen(false);
+    }
+  };
+
+  const toggleAbiturientMenu = () => {
+    if (!abiturientMenuOpen) {
+      setAbiturientMenuOpen(true);
+      setEducationMenuOpen(false);
+    }
+  };
 
   useEffect(() => {
     const closeMenuOnOutsideClick = (e) => {
@@ -28,6 +39,7 @@ export default function Navigation() {
       document.removeEventListener('click', closeMenuOnOutsideClick);
     };
   }, [educationMenuOpen]);
+
   return (
     <nav className={`${styles.navbar} ${menuOpen ? styles.menuOpen : ''}`}>
       <div className={`${styles.mobileMenuButton} ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
@@ -51,30 +63,30 @@ export default function Navigation() {
           </a>
           {educationMenuOpen && (
             <ul className={`${styles.subMenu} ${styles.educationSubMenu}`}>
-              <li><a href="#">Первокурсникам</a></li>
-              <li><a href="#">Бакалавриат</a></li>
-              <li><a href="#">Специалитет</a></li>
-              <li><a href="#">Магистратура</a></li>
-              <li><a href="#">Дополнительное образование</a></li>
-              <li><a href="#">Практики, стажировки, трудоустройство</a></li>
-              <li><a href="#">Документы</a></li>
+              <li><a href="/freshmen-section">Первокурсникам</a></li>
+              <li><a href="/back">Бакалавриат</a></li>
+              <li><a href="/spesh">Специалитет</a></li>
+              <li><a href="/mag">Магистратура</a></li>
+              <li><a href="/stash">Практики, стажировки, трудоустройство</a></li>
+              <li><a href="/documents">Документы</a></li>
             </ul>
           )}
         </li>
-        <li><a href="#">Наука и инновации</a></li>
-        <li><a href="#">Студенческая жизнь</a></li>
-        <li><a href="#">Выпускники</a></li>
-        <li className={`${styles.menuItem} ${educationMenuOpen ? styles.active : ''}`}>
-          <a href="#" onMouseEnter={toggleEducationMenu} onMouseLeave={toggleEducationMenu}>
-          Абитуриентам</a>
-        {educationMenuOpen && (
+        <li><a href="/inn">Наука и инновации</a></li>
+        <li><a href="/stud">Студенческая жизнь</a></li>
+        <li><a href="/vup">Выпускники</a></li>
+        <li className={`${styles.menuItem} ${abiturientMenuOpen ? styles.active : ''}`}>
+          <a href="#" onMouseEnter={toggleAbiturientMenu} onMouseLeave={toggleAbiturientMenu}>
+            Абитуриентам
+          </a>
+          {abiturientMenuOpen && (
             <ul className={`${styles.subMenu} ${styles.educationSubMenu}`}>
-              <li><a href="#">Школьникам</a></li>
-              <li><a href="#">Бакалавриат + специалитет</a></li>
-              <li><a href="#">Магистратура</a></li>
+              <li><a href="/abitur">Школьникам</a></li>
+              <li><a href="/backspesh">Бакалавриат + специалитет</a></li>
+              <li><a href="/maga">Магистратура</a></li>
             </ul>
-          )}        
-          </li>
+          )}
+        </li>
       </ul>
     </nav>
   );

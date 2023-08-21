@@ -10,7 +10,7 @@ const StructureSection = () => {
           <h2 className={styles.whiteText}>Декан Экономического факультета КубГУ</h2>
           <h3 className={styles.whiteText}>Шевченко Игорь Викторович</h3>
           <img
-      src="/head-of-department.jpg"
+      src="/636e0eb6d6370363432433_360.jpg"
       alt="Заведующий кафедрой"
       className={styles.facultyImage}
     />

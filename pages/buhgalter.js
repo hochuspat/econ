@@ -1,36 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '@/styles/MarketingPage.module.css';
 import Navigation from '@/components/Navigation';
 import Head from 'next/head';
 import Footer from '@/components/Footer';
-const facultyMembers = [
-  {
-    name: 'Аветисян Наталья Николаевна',
-    photo: '/avet.jpg',
-    portfolioLink: 'https://www.kubsu.ru/ru/public-portfolio/11934',
-  },
-  {
-    name: 'Имя Фамилия 2',
-    photo: '/Alenikov.jpg',
-    portfolioLink: 'https://www.kubsu.ru/ru/public-portfolio/9109',
-  },
-
-];
-
-const studentEvents = [
-  {
-    image: '/avet.jpg',
-    text: 'Описание первого мероприятия...',
-  },
-  {
-    image: '/event2.jpg',
-    text: 'Описание второго мероприятия...',
-  },
-
-];
 
 const MarketingPage = () => {
+  const [departmentName, setDepartmentName] = useState('marketing');
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [facultyMembers, setFacultyMembers] = useState([]);
+  const [studentEvents, setStudentEvents] = useState([]);
+  const [aboutDepartmentText, setAboutDepartmentText] = useState([]);
+  const [facultyHeadText, setFacultyHeadText] = useState([]);
+  const [teachersText, setTeachersText] = useState([]);
+  const [educationalProcessText, setEducationalProcessText] = useState([]);
+  const [scientificActivitiesText, setScientificActivitiesText] = useState([]);
+  const [contactsText, setContactsText] = useState([]);
 
   const openEventModal = (index) => {
     setSelectedEvent(studentEvents[index]);
@@ -39,6 +23,45 @@ const MarketingPage = () => {
   const closeEventModal = () => {
     setSelectedEvent(null);
   };
+
+  useEffect(() => {
+    const fetchDepartmentData = async (department) => {
+      const facultyMembersResponse = await fetch(`http://192.168.10.105:8000/facultyMembers/${department}`);
+      const facultyMembersData = await facultyMembersResponse.json();
+      setFacultyMembers(facultyMembersData);
+
+      const studentEventsResponse = await fetch(`http://192.168.10.105:8000/studentEvents/${department}`);
+      const studentEventsData = await studentEventsResponse.json();
+      setStudentEvents(studentEventsData);
+
+      const aboutDepartmentResponse = await fetch(`http://192.168.10.105:8000/aboutDepartmentText/${department}`);
+      const aboutDepartmentData = await aboutDepartmentResponse.json();
+      setAboutDepartmentText(aboutDepartmentData);
+
+      const facultyHeadResponse = await fetch(`http://192.168.10.105:8000/facultyHeadText/${department}`);
+      const facultyHeadData = await facultyHeadResponse.json();
+      setFacultyHeadText(facultyHeadData);
+
+      const teachersResponse = await fetch(`http://192.168.10.105:8000/teachersText/${department}`);
+      const teachersData = await teachersResponse.json();
+      setTeachersText(teachersData);
+
+      const educationalProcessResponse = await fetch(`http://192.168.10.105:8000/educationalProcessText/${department}`);
+      const educationalProcessData = await educationalProcessResponse.json();
+      setEducationalProcessText(educationalProcessData);
+
+      const scientificActivitiesResponse = await fetch(`http://192.168.10.105:8000/scientificActivitiesText/${department}`);
+      const scientificActivitiesData = await scientificActivitiesResponse.json();
+      setScientificActivitiesText(scientificActivitiesData);
+
+      const contactsResponse = await fetch(`http://192.168.10.105:8000/contactsText/${department}`);
+      const contactsData = await contactsResponse.json();
+      setContactsText(contactsData);
+    };
+
+    fetchDepartmentData(departmentName);
+  }, [departmentName]);
+  
   return (
     <div className={styles.container}>
     <Navigation />
@@ -47,43 +70,39 @@ const MarketingPage = () => {
       <meta name="description" content="Сайт вашего факультета" />
       <link rel="icon" href="/your-logo-image.svg" />
     </Head>
-      <h1 className={styles.whiteText}>Кафедра бухгалтерского учета, аудита и автоматизированной обработки данных</h1>
-      <p className={styles.whiteText}>
-        Кафедра маркетинга и торгового дела была создана в 1998 году на базе
-        кафедры экономики и организации торговли. Кафедра осуществляет подготовку
-        специалистов по направлениям "Маркетинг" и "Торговое дело", а также
-        проводит научные исследования в области маркетинговых коммуникаций,
-        потребительского поведения, брендинга, ритейлинга, логистики и других
-        современных аспектов маркетинга и торговли.
-      </p>
-      <div className={styles.facultyMember}>
+    <h1 className={styles.whiteText}>Кафедра бухгалтерского учета, аудита и автоматизированной обработки данных</h1>
+{aboutDepartmentText.map((paragraph, index) => (
+  <p key={index} className={styles.whiteText}>
+    {paragraph}
+  </p>
+))}
+<div className={styles.facultyMember}>
   <h2 className={styles.centerText}>Заведующий кафедры</h2>
   <div className={styles.flexContainer}>
-    <p className={styles.whiteText}>
-      Заведующий кафедрой маркетинга и торгового дела — Смирнов Алексей
-      Александрович, доктор экономических наук, профессор, заслуженный деятель
-      науки РФ, лауреат премии имени П.П. Семенова-Тян-Шанского за выдающиеся
-      достижения в области экономической науки. Автор более 300 научных работ,
-      в том числе 15 монографий и 20 учебников по маркетингу и торговому делу.
-    </p>
-    <img
-      src="/head-of-department.jpg"
-      alt="Заведующий кафедрой"
-      className={styles.facultyImage}
-    />
+    {facultyHeadText.map((item, index) => (
+      <div key={index} className={styles.facultyItem}>
+        <img
+          src={item.imagePath}
+          alt="Заведующий кафедрой"
+          className={styles.facultyImage}
+        />
+        <p className={styles.whiteText}>
+          {item.text}
+        </p>
+      </div>
+    ))}
   </div>
 </div>
 
-      <h2 className={styles.whiteText}>Преподаватели кафедры</h2>
-      <p className={styles.whiteText}>
-        На кафедре работает высококвалифицированный преподавательский состав,
-        состоящий из 25 человек, в том числе 5 докторов наук, 12 кандидатов наук,
-        6 доцентов, 4 старших преподавателей и 3 ассистента. Преподаватели
-        кафедры активно участвуют в научных конференциях, семинарах, грантовых
-        проектах, а также сотрудничают с ведущими российскими и зарубежными
-        университетами и компаниями в области маркетинга и торговли.
-      </p>
-      <div className={styles.facultyMembers}>
+
+
+<h2 className={styles.whiteText}>Преподаватели кафедры</h2>
+{teachersText.map((paragraph, index) => (
+  <p key={index} className={styles.whiteText}>
+    {paragraph}
+  </p>
+))}    
+       <div className={styles.facultyMembers}>
       {facultyMembers.map((facultyMember, index) => (
   <div key={index} className={styles.facultyMember}>
     <img src={facultyMember.photo} alt={facultyMember.name} className={styles.facultyImagePrep} />
@@ -135,37 +154,24 @@ const MarketingPage = () => {
         </div>
       </div>
     )}
-      <h2 className={styles.whiteText}>Учебный процесс</h2>
-      <p className={styles.whiteText}>
-        Кафедра маркетинга и торгового дела предлагает студентам современную и
-        практико-ориентированную программу обучения, которая включает в себя
-        изучение основных дисциплин по маркетингу и торговому делу, а также
-        специализированных курсов по выбору студентов. Кроме того, студенты
-        имеют возможность пройти практику в крупных российских и зарубежных
-        компаниях, участвовать в студенческих конкурсах и олимпиадах по
-        маркетингу и торговому делу, а также получить дополнительные сертификаты
-        и квалификации по международным стандартам.
-      </p>
-      <h2 className={styles.whiteText}>Научная деятельность</h2>
-      <p className={styles.whiteText}>
-        Кафедра маркетинга и торгового дела является одним из ведущих научных
-        центров по изучению современных проблем маркетинга и торговли в России и
-        за рубежом. Кафедра реализукет несолько научных проектов, финансируемых
-        различными грантами и фондами, а также издает научный журнал "Вестник
-        маркетинга и торгового дела", входящий в перечень ВАК. Кафедра также
-        организует и проводит международные и всероссийские научные конференции,
-        симпозиумы, круглые столы по актуальным вопросам маркетинга и торговли.
-      </p>
-      <h2 className={styles.whiteText}>Контакты</h2>
-      <p className={styles.whiteText}>
-        Адрес кафедры: 119991, г. Москва, ул. Ленинские горы, д. 1, стр. 46,
-        ауд. 321.
-      </p>
-      <p className={styles.whiteText}>Телефон: +7 (495) 939-28-83</p>
-      <p className={styles.whiteText}>E-mail: marketing@econ.msu.ru</p>
-      <Footer/>
-
-    </div>
+<h2 className={styles.whiteText}>Учебный процесс</h2>
+{educationalProcessText.map((paragraph, index) => (
+  <p key={index} className={styles.whiteText}>
+    {paragraph}
+  </p>
+))}    
+<h2 className={styles.whiteText}>Научная деятельность</h2>
+<p className={styles.whiteText}>
+  {scientificActivitiesText}
+</p>
+<h2 className={styles.whiteText}>Контакты</h2>
+{Object.values(contactsText).map((paragraph, index) => (
+  <p key={index} className={styles.whiteText}>
+    {paragraph}
+  </p>
+))}
+ 
+      </div>
   );
 };
 

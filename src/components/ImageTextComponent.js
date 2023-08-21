@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '@/styles/ImageTextStyles.module.css';
+import Link from 'next/link'; 
 
 const textArray = [
   "Кубанский государственный университет (КубГУ) в Краснодаре является ведущим вузом юга России, с известными достижениями в образовании и науке. Экономический факультет КубГУ - престижный образовательный центр, с преподавателями-экспертами и широкой программой обучения. Факультет активно сотрудничает с ведущими организациями, поддерживает международные связи и успешно готовит выпускников для карьеры в экономике, бизнесе и государственном управлении."
@@ -21,10 +22,16 @@ const ImageTextComponent = () => {
           {textArray.map((text, index) => (
             <p key={index}>{text}</p>
           ))}
+
+
+<Link href="/ofacke">
           <button className={styles.button}>
             Подробнее
             <span className={styles.arrow}>→</span>
           </button>
+        </Link>
+
+
         </div>  
         <div className={styles.image}>
           <img src="/rectangle-34.png" alt="Another Image" />
@@ -36,10 +43,7 @@ const ImageTextComponent = () => {
               <li key={index}>{advantage}</li>
             ))}
           </ul>
-          <button className={styles.button}>
-            Подробнее
-            <span className={styles.arrow}>→</span>
-          </button>
+        
         </div>
       
       </div>

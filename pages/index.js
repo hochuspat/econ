@@ -19,7 +19,6 @@ export default function Home() {
         <NewsSection /> 
       </main>
       <ImageTextComponent />
-        <Footer/>
     </div>
   );
 }

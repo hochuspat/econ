@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель</title>
+</head>
+<body>
+    <h1>Админ-панель</h1>
+    
+    <!-- Отображение данных о школе -->
+    <section>
+        <h2>Данные о школе</h2>
+        <pre id="schoolData"></pre>
+    </section>
+
+    <!-- Отображение текстовых массивов -->
+    <section>
+        <h2>Текстовые массивы</h2>
+        <pre id="textArray"></pre>
+        <pre id="textArray1"></pre>
+        <!-- Добавьте больше элементов pre для других текстовых массивов -->
+    </section>
+
+    <!-- Отображение данных о Baki -->
+    <section>
+        <h2>Данные о Baki</h2>
+        <pre id="bakiData"></pre>
+    </section>
+
+    <!-- Отображение данных о советах -->
+    <section>
+        <h2>Данные о советах</h2>
+        <pre id="tipsData"></pre>
+    </section>
+
+    <script>
+        async function fetchDataAndRender(endpoint, targetElementId) {
+            const response = await fetch(`http://192.168.10.105:8000/${endpoint}`);
+            const data = await response.json();
+            const targetElement = document.getElementById(targetElementId);
+            targetElement.textContent = JSON.stringify(data, null, 2);
+        }
+
+        async function fetchAndRenderAllData() {
+            await fetchDataAndRender("school_data", "schoolData");
+            await fetchDataAndRender("textArray", "textArray");
+            await fetchDataAndRender("textArray1", "textArray1");
+            // Запросите и отобразите данные для других конечных точек по мере необходимости
+            await fetchDataAndRender("BakiData", "bakiData");
+            await fetchDataAndRender("tips_data", "tipsData");
+        }
+
+        // Начальное получение и отображение данных
+        fetchAndRenderAllData();
+    </script>
+</body>
+</html>

@@ -17,7 +17,6 @@ const Fack = () => {
 
   
               <StructureSection />
-        <Footer />
       </div>
 
   );

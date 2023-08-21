@@ -175,3 +175,22 @@
   .educationSubMenu li {
     margin: 5px 0;
   }
+  .menuItem:hover .educationSubMenu,
+.menuItem.active .educationSubMenu,
+.menuItem:hover .abiturientSubMenu,
+.menuItem.active .abiturientSubMenu {
+  display: block;
+}
+
+.educationSubMenu,
+.abiturientSubMenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 200px;
+  padding: 10px;
+  left: 0;
+}

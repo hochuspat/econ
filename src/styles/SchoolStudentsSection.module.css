@@ -1,0 +1,87 @@
+/* SchoolStudentsSection.module.css */
+@import './fonts.css';
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212940;
+  font-family: 'TT Travels', sans-serif;
+  color: white;
+}
+  
+.title1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;  }
+  
+    .card {
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        margin-bottom: 20px;
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .cardContent {
+        flex: 1;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Распределение контента между верхом и низом */
+      }
+      
+      .cardImage {
+        width: 40%; /* Ширина изображения */
+      }
+      
+      .cardImage img {
+        max-width: 100%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-radius: 6px;
+      }
+      
+      .button {
+        background-color: #CB1517;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

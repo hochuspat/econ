@@ -13,58 +13,59 @@
       - ContactsSection (раздел "Контакты")- есть
 
 
-сделай, чтобы пункты меню были постоянные, сделай адаптивность прошлого раздела все страницы
+сделай адаптивность прошлого раздела все страницы
 и сделай нижнюю хрень чтобы она была нормальной 
 
-    - EducationScreen (экран "Образование")
-      - FreshmenSection (раздел "Первокурсникам")
-        - DeanGreeting (приветствие декана)
-        - StudyStructure (информация об учебной структуре)
-        - PreparationsBeforeEducation (что нужно сделать перед началом обучения)
-        - SportsOpportunities (возможности для занятий спортом)
-      - BachelorSection (раздел "Бакалавриат")
-        - Schedule (расписание)
-        - Profiles (профили)
-        - Calendar (календарные графики учебного процесса)
-        - GroupLists (списки групп)
-        - Certification (аттестация)
-      - SpecialitySection (раздел "Специалитет")
-        - Schedule (расписание)
-        - Specializations (специализации)
-        - Calendar (календарные графики учебного процесса)
-        - GroupLists (списки групп)
-        - Certification (аттестация)
-      - MasterSection (раздел "Магистратура")
-        - Schedule (расписание)
-        - Programs (программы)
-        - Calendar (календарные графики учебного процесса)
-        - GroupLists (списки групп)
-      - AdditionalEducationSection (раздел "Дополнительное образование")
-      - InternshipsSection (раздел "Практики, стажировки, трудоустройство")
-      - DocumentsSection (раздел "Документы")
-    - ScienceInnovationScreen (экран "Наука и инновации")
-      - PostgraduateSection (раздел "Аспирантура")
-      - ETiPJournalSection (раздел "Журнал 'ЭТиП'")
-      - ConferencesSection (раздел "Научные конференции")
-      - StudentScientificSocietySection (раздел "СНО")
-      - InternationalCollaborationSection (раздел "Международное сотрудничество")
-    - StudentLifeScreen (экран "Студенческая жизнь")
-      - StudentCouncilSection (раздел "Студенческий совет")
-      - StudentUnionSection (раздел "Профком студентов")
-      - ScholarshipsSection (раздел "Стипендии и материальная помощь")
-      - CareerGuidanceSection (раздел "Профориентационная работа")
-      - DormitorySection (раздел "Общежитие")
-    - AlumniScreen (экран "Выпускники")
-    - ApplicantsScreen (экран "Абитуриентам")
-      - SchoolStudentsSection (раздел "Школьникам")
-        - YoungEntrepreneursSchool (школа молодого предпринимателя)
-        - FinancialLiteracySchool (школа финансовой грамотности)
-        - WeekendEconomistSchool (школа выходного дня "Экономист")
-        - PreparationForEconomicsOlympiad (подготовка к ЕГЭ по "Обществознанию")
-        - PreparationForEconomicsCompetition (подготовка к олимпиаде по экономике)
-      - BachelorAndSpecialitySection (раздел "Бакалавриат + специалитет")
-        - PreparationForAdmission (подготовка к поступлению)
-        - InternationalCollaboration (международное сотрудничество)
+    - EducationScreen (экран "Образование")- есть
+      - FreshmenSection (раздел "Первокурсникам")- есть
+        - DeanGreeting (приветствие декана)- есть
+        - StudyStructure (информация об учебной структуре)- есть
+        - PreparationsBeforeEducation (что нужно сделать перед началом обучения)- есть
+        - SportsOpportunities (возможности для занятий спортом)- есть
+
+сделай адаптацию 
+
+
+      - BachelorSection (раздел "Бакалавриат")- есть
+        - Schedule (расписание)- есть
+        - Profiles (профили)- есть
+        - Certification (аттестация)- есть
+      - SpecialitySection (раздел "Специалитет")- есть
+        - Schedule (расписание)- есть
+        - Specializations (специализации)- есть
+        - Certification (аттестация)- есть
+      - MasterSection (раздел "Магистратура")- есть
+        - Schedule (расписание)- есть
+        - Programs (программы)- есть
+      - InternshipsSection (раздел "Практики, стажировки, трудоустройство")- есть
+      - DocumentsSection (раздел "Документы")- есть
+
+    - ScienceInnovationScreen (экран "Наука и инновации")- есть
+      - ConferencesSection (раздел "Научные конференции")- есть
+      - StudentScientificSocietySection (раздел "СНО")- есть
+
+    - StudentLifeScreen (экран "Студенческая жизнь")- есть
+      - StudentCouncilSection (раздел "Студенческий совет")- есть
+      - StudentUnionSection (раздел "Профком студентов")- есть
+      - ScholarshipsSection (раздел "Стипендии и материальная помощь")- есть
+      - CareerGuidanceSection (раздел "Профориентационная работа")- есть
+      - DormitorySection (раздел "Общежитие")- есть
+
+
+    - AlumniScreen (экран "Выпускники")- есть
+
+
+    - ApplicantsScreen (экран "Абитуриентам")- есть
+      - SchoolStudentsSection (раздел "Школьникам")- есть
+        - YoungEntrepreneursSchool (школа молодого предпринимателя)- есть
+        - FinancialLiteracySchool (школа финансовой грамотности)- есть
+        - WeekendEconomistSchool (школа выходного дня "Экономист")- есть
+        - PreparationForEconomicsOlympiad (подготовка к ЕГЭ по "Обществознанию")- есть
+        - PreparationForEconomicsCompetition (подготовка к олимпиаде по экономике)- есть
+      
+      - BachelorAndSpecialitySection (раздел "Бакалавриат + специалитет")- есть
+        - PreparationForAdmission (подготовка к поступлению)- есть
+        - InternationalCollaboration (международное сотрудничество)- есть
       - MasterSection (раздел "Магистратура")
         - PreparationForAdmission (подготовка к поступлению)
         - InternationalCollaboration (международное сотрудничество)

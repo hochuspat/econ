@@ -1,0 +1,111 @@
+@import './fonts.css';
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212940;
+  font-family: 'TT Travels', sans-serif;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  margin-top: 10px;
+}
+
+.dropdownButton {
+  background: #f0f0f0;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdownContent a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .dropdownContent a:hover {
+    color: #f0f0f0;
+  }
+.dropdownItem {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownButton.active + .dropdownContent {
+  display: block;
+}
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: rgb(0, 0, 0); /* Set the link color to white */
+
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: rgb(0, 0, 0); /* Set the h2 color to white */
+  }
+  
+  .section p {
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0); /* Set the link color to white */
+
+    font-size: 16px;
+  }
+  
+  .section a {
+    color: rgb(0, 0, 0); /* Set the link color to white */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .section a:hover {
+    color: #000000;
+  }
+  
+  /* Стили для контейнера изображения */
+.imageContainer {
+    padding: 20px;
+  }
+  
+  
+  
+  
+  /* Добавьте это в файл DocumentsPage.module.css */
+.subtitle {
+    text-align: center; /* Центрируем заголовок по горизонтали */
+    margin-bottom: 20px; /* Добавляем отступ после заголовка */
+  }
+  
+  .imageContainer {
+    text-align: center; /* Центрируем содержимое контейнера изображения */
+    margin-top: 20px; /* Добавляем отступ перед изображением */
+  }
+  
+  

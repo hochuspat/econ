@@ -15,10 +15,7 @@ const StructureSection = () => {
             Лауреат премии правительства РФ в области науки и техники (2007 г.),
             доктор экономических наук, профессор.
           </p>
-          <p className={styles.whiteText}>
-            Более подробная информация размещена в разделе
-            "Руководство экономического факультета"
-          </p>
+ 
           <p className={styles.whiteText}>Состав ученого совета экономического факультета.</p>
           <h3 className={styles.whiteText}>Кафедры</h3>
           <div className={styles.buttonContainer}>

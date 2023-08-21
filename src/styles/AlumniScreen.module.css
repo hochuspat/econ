@@ -1,0 +1,77 @@
+/* Стили для корневого элемента компонента AlumniScreen */
+@import './fonts.css';
+
+.container {
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 20px; 
+    align-items: center;
+    background-color: #212940;
+    font-family: 'TT Travels', sans-serif;
+    color: white;  }
+   
+  
+  /* Стили для заголовка компонента AlumniScreen */
+  .container h1 {
+    font-family: Arial, sans-serif; /* Задаем семейство шрифта */
+    font-size: 36px; /* Задаем размер шрифта */
+    font-weight: bold; /* Задаем толщину шрифта */
+    color: #ffffff; /* Задаем цвет текста */
+    text-align: center; /* Выравниваем текст по центру */
+  }
+  
+  /* Стили для списка выпускников компонента AlumniList */
+  .list {
+    display: flex; /* Используем флексбокс для расположения элементов */
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    justify-content: space-between; /* Распределяем элементы равномерно по горизонтали */
+    gap: 20px; /* Задаем расстояние между элементами */
+  }
+  
+  /* Стили для карточки выпускника компонента AlumniCard */
+  .card {
+    width: 300px; /* Задаем ширину карточки */
+    border: 1px solid #cccccc; /* Задаем границу карточки */
+    border-radius: 10px; /* Задаем скругление углов карточки */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Задаем тень карточки */
+    padding: 10px; /* Добавляем отступы внутри карточки */
+    background-color: white;
+  }
+  
+  /* Стили для изображения выпускника в карточке */
+  .card img {
+    display: block; /* Делаем изображение блочным элементом */
+    width: 100%; /* Задаем ширину изображения равной ширине карточки */
+    height: auto; /* Задаем высоту изображения пропорционально ширине */
+    object-fit: cover; /* Обрезаем изображение по границам карточки */
+  }
+  
+  /* Стили для имени выпускника в карточке */
+  .card h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 10px; /* Добавляем отступ сверху */
+  }
+  
+  /* Стили для остального текста в карточке */
+  .card p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #666666;
+  }
+  
+  /* Стили для ссылок в карточке */
+  .card a {
+    color: #0066cc; /* Задаем цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+  }
+  
+  /* Стили для ссылок при наведении курсора на них */
+  .card a:hover {
+    color: #003399; /* Задаем другой цвет ссылок при наведении */
+    text-decoration: underline; /* Добавляем подчеркивание ссылок при наведении */
+  }
+  

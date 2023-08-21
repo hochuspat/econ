@@ -23,10 +23,18 @@
 }
 
 .facultyImage2 {
-  width: 1740px;
-  height: auto;
+  max-width: 100%; /* Изображение не будет шире контейнера */
+  height: auto; /* Сохранит пропорции изображения */
   margin-right: 10px;
   border-radius: 6%;
+}
+
+/* Применение стилей только для экранов с шириной до 1740px */
+@media (max-width: 1740px) {
+  .facultyImage2 {
+    width: 100%; /* Изображение займет всю ширину контейнера */
+    max-width: none; /* Снимаем ограничение максимальной ширины */
+  }
 }
 .personInfo {
   display: flex;

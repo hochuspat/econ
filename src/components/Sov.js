@@ -13,7 +13,7 @@ const StructureSection = () => {
             <p className={styles.whiteText}>Должность: Председатель Совета</p>
           </div>
           <img
-            src="/head-of-department.jpg"
+            src="/636e0eb6d6370363432433_360.jpg"
             alt="Заведующий кафедрой"
             className={styles.facultyImage}
           />

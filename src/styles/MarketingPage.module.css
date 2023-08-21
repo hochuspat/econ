@@ -99,12 +99,21 @@
   margin-bottom: 20px;
 }
 
+.facultyItem {
+  display: flex;
+  align-items: center; /* Центрирование элементов по вертикали */
+  margin-bottom: 20px; /* Отступ снизу между элементами */
+}
+
 .facultyImage {
-  width: 316px; 
+  width: 316px;
   height: auto;
   margin-right: 10px;
   border-radius: 6%;
 }
+
+
+
 .facultyImagePrep{
   width: 181px; 
   height: auto;
