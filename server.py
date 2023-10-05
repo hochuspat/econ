@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-#http://192.168.10.105:8000/docs#/
+
+#http://192.168.0.59:8000/docs#/
+#python -m uvicorn server:app --host 192.168.0.59 --port 8000 --reload
 app = FastAPI()
 
 app.add_middleware(
@@ -46,7 +48,8 @@ textArray3 = {
     "description": 'Программа для школьников 9-11 классов, которые хотят научиться создавать свой бизнес, развивать свои идеи и получать практические навыки в области экономики и предпринимательства.',
     "imageUrl": '/IIWV8jeAhXg.jpg',
     "imageAlt": 'Young Entrepreneurs School',
-  }
+  },
+
 
 textArray4 = {
   "title":'Экономический факультет КубГУ предлагает школьникам различные программы и мероприятия, которые помогут им узнать больше об экономике, развить свои навыки и подготовиться к поступлению.',
@@ -250,17 +253,6 @@ async def get_departments():
     return JSONResponse(content=list(departments.keys()))
 
 
-
-
-
-
-
-
-
-
-
-
-
 @app.get("/internationalPartners", response_class=JSONResponse) 
 async def get_internationalPartners():
     return JSONResponse(content=internationalPartners)
@@ -312,24 +304,6 @@ async def get_BakiData():
 @app.get("/tips_data", response_class=JSONResponse) 
 async def get_tips_data():
     return JSONResponse(content=tips_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
